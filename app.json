@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/challenge/challenge",
+    "pages/profile/profile",
+    "pages/conversation/conversation",
+    "pages/backpack/backpack",
+    "pages/backpack-detail/backpack-detail"
+  ],
+  "window": {
+    "navigationBarTitleText": "SpeakQuest",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F5F5F5",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#000000",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "HOME",
+        "iconPath": "images/icons/home.png",
+        "selectedIconPath": "images/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/challenge/challenge",
+        "text": "CHALLENGE",
+        "iconPath": "images/icons/challenge.png",
+        "selectedIconPath": "images/icons/challenge-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "PROFILE",
+        "iconPath": "images/icons/profile.png",
+        "selectedIconPath": "images/icons/profile-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

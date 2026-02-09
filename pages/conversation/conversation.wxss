@@ -1,0 +1,306 @@
+/* pages/conversation/conversation.wxss */
+
+.conversation-page {
+  min-height: 100vh;
+  background: #FAF9F6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 顶部导航 */
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 30rpx 20rpx;
+  background: #FFFFFF;
+  border-bottom: 4rpx solid #000;
+}
+
+.back-btn {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-arrow {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #000;
+}
+
+.back-btn image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.progress-section {
+  display: flex;
+  align-items: baseline;
+  gap: 12rpx;
+}
+
+.progress-label {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #999;
+  letter-spacing: 2rpx;
+}
+
+.progress-value {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #E74C3C;
+}
+
+.npc-mini-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3rpx solid #000;
+}
+
+.npc-mini-avatar image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 进度条 */
+.progress-bar-container {
+  padding: 20rpx 30rpx;
+  background: #FFFFFF;
+}
+
+.progress-bar {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.progress-item {
+  flex: 1;
+  height: 12rpx;
+  background: #E0E0E0;
+  border-radius: 6rpx;
+  border: 2rpx solid #000;
+}
+
+.progress-item.completed {
+  background: #000;
+}
+
+.current-objective {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 对话区域 */
+.chat-area {
+  flex: 1;
+  padding: 30rpx;
+  padding-bottom: 350rpx;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+}
+
+.message {
+  display: flex;
+  max-width: 85%;
+}
+
+.npc-message {
+  align-self: flex-start;
+}
+
+.user-message {
+  align-self: flex-end;
+}
+
+.message-bubble {
+  padding: 24rpx 32rpx;
+  border-radius: 24rpx;
+  border: 3rpx solid #000;
+  box-shadow: 4rpx 4rpx 0 #000;
+}
+
+.npc-message .message-bubble {
+  background: #FFFFFF;
+  border-bottom-left-radius: 8rpx;
+}
+
+.user-message .message-bubble {
+  background: #A0D2F5;
+  border-bottom-right-radius: 8rpx;
+}
+
+.message-bubble text {
+  font-size: 30rpx;
+  line-height: 1.6;
+  color: #000;
+}
+
+/* 底部工具栏 */
+.bottom-toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-top: 4rpx solid #000;
+  padding: 20rpx 30rpx 50rpx;
+  padding-bottom: calc(50rpx + env(safe-area-inset-bottom));
+}
+
+.helper-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 60rpx;
+  margin-bottom: 24rpx;
+}
+
+.helper-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.helper-btn image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: 3rpx solid #000;
+}
+
+.hint-btn image {
+  background: #FFD700;
+}
+
+.translate-btn image {
+  background: #5DD3D3;
+}
+
+.helper-btn text {
+  font-size: 22rpx;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 1rpx;
+}
+
+/* 录音按钮 */
+.record-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  background: #000;
+  border-radius: 50rpx;
+  box-shadow: 6rpx 6rpx 0 rgba(0,0,0,0.3);
+  gap: 16rpx;
+}
+
+.record-btn.recording {
+  background: #E74C3C;
+}
+
+.record-btn image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.record-btn text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  letter-spacing: 2rpx;
+}
+
+/* 提示弹窗 */
+.hint-modal,
+.translate-modal,
+.complete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.hint-overlay,
+.translate-overlay,
+.complete-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hint-content,
+.translate-content,
+.complete-content {
+  position: relative;
+  width: 600rpx;
+  background: #FFFFFF;
+  border-radius: 32rpx;
+  border: 4rpx solid #000;
+  box-shadow: 8rpx 8rpx 0 #000;
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hint-title,
+.translate-title,
+.complete-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 24rpx;
+}
+
+.hint-text,
+.translate-original {
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 16rpx;
+}
+
+.translate-result {
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.hint-close,
+.translate-close,
+.complete-btn {
+  padding: 20rpx 60rpx;
+  background: #000;
+  color: #FFFFFF;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.complete-xp {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 30rpx;
+}

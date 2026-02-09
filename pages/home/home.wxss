@@ -1,0 +1,325 @@
+/* pages/home/home.wxss */
+
+.home-page {
+  min-height: 100vh;
+  background: #4A90D9;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 头部 */
+.header {
+  padding: 60rpx 40rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.title {
+  font-size: 80rpx;
+  font-weight: 900;
+  font-style: italic;
+  color: #FFD700;
+  text-shadow: 4rpx 4rpx 0 #E5A800, 8rpx 8rpx 0 rgba(0,0,0,0.2);
+  letter-spacing: 8rpx;
+}
+
+.compass {
+  width: 100rpx;
+  height: 100rpx;
+  background: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4rpx solid #000;
+  box-shadow: 4rpx 4rpx 0 rgba(0,0,0,0.2);
+}
+
+.compass image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* 地图容器 */
+.map-container {
+  flex: 1;
+  padding: 0 20rpx;
+  height: calc(100vh - 200rpx);
+}
+
+/* 岛屿 */
+.island {
+  position: relative;
+  width: 100%;
+  min-height: 1000rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.island-bg {
+  width: 650rpx;
+  height: 1100rpx;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 节点容器 */
+.nodes-container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 1000rpx;
+  padding-top: 80rpx;
+}
+
+/* 节点通用样式 */
+.node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node-card {
+  width: 180rpx;
+  height: 140rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  border: 4rpx solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 4rpx 4rpx 0 rgba(0,0,0,0.2);
+  overflow: hidden;
+  padding: 10rpx;
+}
+
+.node-card.active {
+  border: 6rpx dashed #4A90D9;
+  background: #FFFFFF;
+}
+
+.node.locked .node-card {
+  opacity: 0.7;
+}
+
+.node-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.lock-icon {
+  position: absolute;
+  top: -20rpx;
+  right: -20rpx;
+  width: 50rpx;
+  height: 50rpx;
+  background: #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock-icon image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.node-name {
+  margin-top: 16rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 2rpx;
+}
+
+/* 节点位置 */
+.node-school {
+  top: 80rpx;
+  right: 100rpx;
+}
+
+.node-company {
+  top: 350rpx;
+  left: 60rpx;
+}
+
+.node-restaurant {
+  top: 650rpx;
+  left: 50%;
+  transform: translateX(-30%);
+}
+
+/* 路径线 */
+.path {
+  position: absolute;
+  border: 4rpx dashed #FFFFFF;
+  z-index: 1;
+}
+
+.path-1 {
+  width: 200rpx;
+  height: 200rpx;
+  top: 200rpx;
+  left: 180rpx;
+  border: none;
+  border-right: 4rpx dashed #FFFFFF;
+  border-bottom: 4rpx dashed #FFFFFF;
+  border-radius: 0 0 40rpx 0;
+  transform: rotate(-20deg);
+}
+
+.path-2 {
+  width: 150rpx;
+  height: 200rpx;
+  top: 500rpx;
+  left: 200rpx;
+  border: none;
+  border-left: 4rpx dashed #FFFFFF;
+  border-bottom: 4rpx dashed #FFFFFF;
+  border-radius: 0 0 0 40rpx;
+  transform: rotate(20deg);
+}
+
+/* 棕榈树装饰 */
+.palm {
+  position: absolute;
+  width: 80rpx;
+  height: 100rpx;
+  z-index: 2;
+}
+
+.palm-1 {
+  top: 180rpx;
+  left: 80rpx;
+}
+
+.palm-2 {
+  top: 300rpx;
+  right: 80rpx;
+}
+
+.palm-3 {
+  top: 550rpx;
+  left: 120rpx;
+}
+
+.palm-4 {
+  top: 750rpx;
+  right: 100rpx;
+}
+
+/* 云朵 */
+.cloud {
+  position: absolute;
+  z-index: 3;
+}
+
+.cloud-1 {
+  width: 150rpx;
+  height: 80rpx;
+  top: 400rpx;
+  right: -20rpx;
+}
+
+.cloud-2 {
+  width: 120rpx;
+  height: 60rpx;
+  top: 600rpx;
+  left: -10rpx;
+}
+
+/* 右下角小岛 */
+.mini-island {
+  position: fixed;
+  bottom: 180rpx;
+  right: -40rpx;
+  z-index: 2;
+}
+
+.mini-island image {
+  width: 200rpx;
+  height: 200rpx;
+  opacity: 0.8;
+}
+
+/* 背景波浪效果 */
+.home-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(255,255,255,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* 新手引导弹窗 */
+.welcome-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.welcome-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.welcome-content {
+  position: relative;
+  width: 580rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  padding: 50rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.2);
+}
+
+.welcome-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 12rpx;
+}
+
+.welcome-text {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+
+.welcome-btn {
+  padding: 0;
+}
+
+.welcome-btn text {
+  font-size: 28rpx;
+  color: #4A90D9;
+  text-decoration: underline;
+}

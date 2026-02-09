@@ -1,0 +1,112 @@
+/* pages/backpack/backpack.wxss */
+
+.backpack-page {
+  min-height: 100vh;
+  background: #FAF9F6;
+}
+
+/* 顶部导航 */
+.nav-header {
+  padding: 60rpx 40rpx 30rpx;
+  background: #FFFFFF;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #000;
+}
+
+.divider {
+  height: 4rpx;
+  background: #000;
+}
+
+/* 分类区域 */
+.category-section {
+  padding: 60rpx 40rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 2rpx;
+  margin-bottom: 30rpx;
+  display: block;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+/* 分类卡片 */
+.category-card {
+  display: flex;
+  align-items: center;
+  padding: 36rpx 30rpx;
+  border-radius: 24rpx;
+  border: 4rpx solid #000;
+  box-shadow: 6rpx 6rpx 0 #000;
+}
+
+.school-card {
+  background: #FFD700;
+}
+
+.company-card {
+  background: #A0D2F5;
+}
+
+.restaurant-card {
+  background: #F5A0A0;
+}
+
+.category-icon {
+  width: 70rpx;
+  height: 70rpx;
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  border: 3rpx solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24rpx;
+}
+
+.category-icon image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.category-name {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 2rpx;
+}
+
+.category-count {
+  width: 50rpx;
+  height: 50rpx;
+  border: 3rpx solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+}
+
+.category-count text {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #000;
+}
+
+.arrow {
+  width: 32rpx;
+  height: 32rpx;
+}

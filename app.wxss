@@ -1,0 +1,183 @@
+/* app.wxss - 全局样式 */
+
+/* 重置默认样式 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #333;
+  background-color: #F5F5F5;
+  box-sizing: border-box;
+}
+
+view, text, image {
+  box-sizing: border-box;
+}
+
+/* 常用颜色变量（通过class使用） */
+.bg-yellow { background-color: #FFD700; }
+.bg-blue { background-color: #4A90D9; }
+.bg-pink { background-color: #F5A0A0; }
+.bg-purple { background-color: #C8A0D9; }
+.bg-white { background-color: #FFFFFF; }
+.bg-black { background-color: #000000; }
+
+.text-yellow { color: #FFD700; }
+.text-blue { color: #4A90D9; }
+.text-red { color: #E74C3C; }
+.text-white { color: #FFFFFF; }
+.text-black { color: #000000; }
+.text-gray { color: #999999; }
+
+/* 常用字体样式 */
+.font-bold { font-weight: bold; }
+.font-italic { font-style: italic; }
+
+/* 标题样式 - 模拟设计稿中的斜体粗体标题 */
+.title-style {
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 2rpx;
+}
+
+/* 卡片基础样式 */
+.card {
+  background-color: #FFFFFF;
+  border-radius: 24rpx;
+  border: 4rpx solid #000000;
+  box-shadow: 6rpx 6rpx 0 #000000;
+  overflow: hidden;
+}
+
+/* 按钮基础样式 */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24rpx 48rpx;
+  border-radius: 50rpx;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.btn-black {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.btn-yellow {
+  background-color: #FFD700;
+  color: #000000;
+  border: 4rpx solid #000000;
+}
+
+.btn-purple {
+  background-color: #C8A0D9;
+  color: #000000;
+  border: 4rpx solid #000000;
+}
+
+/* 难度标签 */
+.difficulty-tag {
+  display: inline-block;
+  padding: 8rpx 24rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.difficulty-hard {
+  background-color: #E74C3C;
+}
+
+.difficulty-medium {
+  background-color: #F39C12;
+}
+
+.difficulty-easy {
+  background-color: #27AE60;
+}
+
+/* Flex 布局工具类 */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+.flex-1 { flex: 1; }
+
+/* 间距工具类 */
+.m-0 { margin: 0; }
+.m-10 { margin: 10rpx; }
+.m-20 { margin: 20rpx; }
+.m-30 { margin: 30rpx; }
+
+.mt-10 { margin-top: 10rpx; }
+.mt-20 { margin-top: 20rpx; }
+.mt-30 { margin-top: 30rpx; }
+.mt-40 { margin-top: 40rpx; }
+
+.mb-10 { margin-bottom: 10rpx; }
+.mb-20 { margin-bottom: 20rpx; }
+.mb-30 { margin-bottom: 30rpx; }
+
+.ml-10 { margin-left: 10rpx; }
+.ml-20 { margin-left: 20rpx; }
+
+.mr-10 { margin-right: 10rpx; }
+.mr-20 { margin-right: 20rpx; }
+
+.p-10 { padding: 10rpx; }
+.p-20 { padding: 20rpx; }
+.p-30 { padding: 30rpx; }
+.p-40 { padding: 40rpx; }
+
+/* 文字对齐 */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* 圆角 */
+.rounded { border-radius: 16rpx; }
+.rounded-lg { border-radius: 24rpx; }
+.rounded-xl { border-radius: 32rpx; }
+.rounded-full { border-radius: 50%; }
+
+/* 阴影 */
+.shadow {
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.shadow-hard {
+  box-shadow: 6rpx 6rpx 0 #000000;
+}
+
+/* 宽高 */
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+/* 定位 */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+
+/* 溢出 */
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+
+/* 开关样式覆盖 */
+switch .wx-switch-input {
+  background-color: #E0E0E0 !important;
+  border-color: #E0E0E0 !important;
+}
+
+switch .wx-switch-input.wx-switch-input-checked {
+  background-color: #4CD964 !important;
+  border-color: #4CD964 !important;
+}

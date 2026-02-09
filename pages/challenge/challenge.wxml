@@ -1,0 +1,105 @@
+<!-- pages/challenge/challenge.wxml -->
+<view class="challenge-page">
+  <!-- 标题 -->
+  <view class="header">
+    <text class="title-line1">PICK A</text>
+    <text class="title-line2">CHALLENGE</text>
+  </view>
+
+  <!-- 挑战卡片列表 -->
+  <scroll-view class="challenge-list" scroll-y="true" show-scrollbar="{{false}}" enhanced="{{true}}">
+    <view 
+      class="challenge-card" 
+      wx:for="{{challenges}}" 
+      wx:key="id"
+      bindtap="onCardTap"
+      data-challenge="{{item}}"
+      style="background: {{item.bgColor || '#A0D2F5'}};"
+    >
+      <!-- NPC 图片区域 -->
+      <view class="card-image-area">
+        <image class="npc-avatar" src="{{item.npcAvatar}}" mode="aspectFit"></image>
+        <view class="dots">
+          <view class="dot"></view>
+          <view class="dot"></view>
+          <view class="dot"></view>
+        </view>
+      </view>
+
+      <!-- 卡片信息 -->
+      <view class="card-info">
+        <view class="card-header">
+          <text class="card-title">{{item.title}}</text>
+          <view class="difficulty-tag difficulty-{{item.difficulty}}">
+            {{item.difficultyText}}
+          </view>
+        </view>
+        
+        <view class="card-role">
+          <text>{{item.npcRole}}</text>
+        </view>
+
+        <text class="card-desc">{{item.description}}</text>
+
+        <!-- 箭头按钮 -->
+        <view class="arrow-btn">
+          <text>→</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 任务详情弹窗 -->
+  <view class="modal-overlay" wx:if="{{showModal}}" bindtap="closeModal">
+    <view class="modal-content" catchtap="preventClose">
+      <!-- 关闭按钮 -->
+      <view class="modal-close-btn" bindtap="closeModal">
+        <text>×</text>
+      </view>
+
+      <!-- NPC 图片区域 -->
+      <view class="modal-npc-area" style="background: {{selectedChallenge.bgColor || '#A0D2F5'}};">
+        <image class="modal-npc-avatar" src="{{selectedChallenge.npcAvatar}}" mode="aspectFit"></image>
+      </view>
+
+      <!-- 任务信息 -->
+      <view class="modal-info">
+        <!-- 难度标签 -->
+        <view class="modal-difficulty-tag difficulty-{{selectedChallenge.difficulty}}">
+          {{selectedChallenge.difficultyText}}
+        </view>
+
+        <!-- 任务标题 -->
+        <text class="modal-title">{{selectedChallenge.title}}</text>
+
+        <!-- 角色信息 -->
+        <view class="modal-role-section">
+          <text class="modal-role-label">YOU ARE PLAYING</text>
+          <view class="modal-role-card">
+            <text class="modal-role-name">{{selectedChallenge.playerRole}}</text>
+            <text class="modal-opponent">Opponent: {{selectedChallenge.opponentRole}}</text>
+          </view>
+        </view>
+
+        <!-- 任务目标 -->
+        <view class="modal-objectives">
+          <view class="modal-objectives-header">
+            <text>🎯</text>
+            <text>任务目标</text>
+          </view>
+
+          <view class="modal-objective-item" wx:for="{{selectedChallenge.objectives}}" wx:key="id">
+            <view class="modal-objective-number">{{index + 1}}</view>
+            <text class="modal-objective-text">{{item.description}}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 开始按钮 -->
+      <view class="modal-start-btn" bindtap="onStartMission">
+        <text>START MISSION</text>
+        <text class="play-icon">▶</text>
+      </view>
+    </view>
+  </view>
+</view>

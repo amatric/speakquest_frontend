@@ -1,0 +1,84 @@
+<!-- pages/home/home.wxml -->
+<view class="home-page">
+  <!-- 标题 -->
+  <view class="header">
+    <text class="title">MAP</text>
+    <view class="compass">
+      <image src="/images/icons/compass.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <!-- 地图区域 -->
+  <scroll-view class="map-container" scroll-y="true">
+    <view class="island">
+      <!-- 岛屿背景 -->
+      <image class="island-bg" src="/images/island-bg.png" mode="aspectFit"></image>
+      
+      <!-- 关卡节点 -->
+      <view class="nodes-container">
+        <!-- SCHOOL 节点 -->
+        <view class="node node-school {{scenes[0].isUnlocked ? '' : 'locked'}}" bindtap="onNodeTap" data-scene="{{scenes[0]}}">
+          <view class="node-card">
+            <view class="lock-icon" wx:if="{{!scenes[0].isUnlocked}}">
+              <image src="/images/icons/lock.png" mode="aspectFit"></image>
+            </view>
+            <image class="node-icon" src="/images/icons/school.png" mode="aspectFit"></image>
+          </view>
+          <text class="node-name">SCHOOL</text>
+        </view>
+
+        <!-- 路径线 -->
+        <view class="path path-1"></view>
+
+        <!-- COMPANY 节点 -->
+        <view class="node node-company {{scenes[1].isUnlocked ? 'active' : 'locked'}}" bindtap="onNodeTap" data-scene="{{scenes[1]}}">
+          <view class="node-card active">
+            <image class="node-icon" src="/images/icons/company.png" mode="aspectFit"></image>
+          </view>
+          <text class="node-name">COMPANY</text>
+        </view>
+
+        <!-- 路径线 -->
+        <view class="path path-2"></view>
+
+        <!-- RESTAURANT 节点 -->
+        <view class="node node-restaurant {{scenes[2].isUnlocked ? '' : 'locked'}}" bindtap="onNodeTap" data-scene="{{scenes[2]}}">
+          <view class="node-card">
+            <view class="lock-icon" wx:if="{{!scenes[2].isUnlocked}}">
+              <image src="/images/icons/lock.png" mode="aspectFit"></image>
+            </view>
+            <image class="node-icon" src="/images/icons/restaurant.png" mode="aspectFit"></image>
+          </view>
+          <text class="node-name">RESTAURANT</text>
+        </view>
+      </view>
+
+      <!-- 装饰元素 - 棕榈树 -->
+      <image class="palm palm-1" src="/images/palm.png" mode="aspectFit"></image>
+      <image class="palm palm-2" src="/images/palm.png" mode="aspectFit"></image>
+      <image class="palm palm-3" src="/images/palm.png" mode="aspectFit"></image>
+      <image class="palm palm-4" src="/images/palm.png" mode="aspectFit"></image>
+    </view>
+  </scroll-view>
+
+  <!-- 云朵装饰 -->
+  <image class="cloud cloud-1" src="/images/cloud.png" mode="aspectFit"></image>
+  <image class="cloud cloud-2" src="/images/cloud.png" mode="aspectFit"></image>
+
+  <!-- 右下角小岛装饰 -->
+  <view class="mini-island">
+    <image src="/images/mini-island.png" mode="aspectFit"></image>
+  </view>
+
+  <!-- 新手引导弹窗 -->
+  <view class="welcome-modal" wx:if="{{showWelcome}}">
+    <view class="welcome-overlay"></view>
+    <view class="welcome-content">
+      <text class="welcome-title">Welcome to the Island!</text>
+      <text class="welcome-text">Explore any location to start.</text>
+      <view class="welcome-btn" bindtap="dismissWelcome">
+        <text>Dismiss</text>
+      </view>
+    </view>
+  </view>
+</view>

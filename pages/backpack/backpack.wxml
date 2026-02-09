@@ -1,0 +1,64 @@
+<!-- pages/backpack/backpack.wxml -->
+<view class="backpack-page">
+  <!-- 顶部导航 -->
+  <view class="nav-header">
+    <text class="page-title">知识背包</text>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 分类列表 -->
+  <view class="category-section">
+    <text class="section-title">SELECT CATEGORY</text>
+
+    <view class="category-list">
+      <!-- SCHOOL -->
+      <view 
+        class="category-card school-card" 
+        bindtap="goToCategory"
+        data-category="{{categories[0]}}"
+      >
+        <view class="category-icon">
+          <image src="/images/icons/school.png" mode="aspectFit"></image>
+        </view>
+        <text class="category-name">SCHOOL</text>
+        <view class="category-count">
+          <text>{{categories[0].count || 1}}</text>
+        </view>
+        <image class="arrow" src="/images/icons/arrow-right-dark.png" mode="aspectFit"></image>
+      </view>
+
+      <!-- COMPANY -->
+      <view 
+        class="category-card company-card" 
+        bindtap="goToCategory"
+        data-category="{{categories[1]}}"
+      >
+        <view class="category-icon">
+          <image src="/images/icons/company.png" mode="aspectFit"></image>
+        </view>
+        <text class="category-name">COMPANY</text>
+        <view class="category-count">
+          <text>{{categories[1].count || 3}}</text>
+        </view>
+        <image class="arrow" src="/images/icons/arrow-right-dark.png" mode="aspectFit"></image>
+      </view>
+
+      <!-- RESTAURANT -->
+      <view 
+        class="category-card restaurant-card" 
+        bindtap="goToCategory"
+        data-category="{{categories[2]}}"
+      >
+        <view class="category-icon">
+          <image src="/images/icons/restaurant.png" mode="aspectFit"></image>
+        </view>
+        <text class="category-name">RESTAURANT</text>
+        <view class="category-count">
+          <text>{{categories[2].count || 1}}</text>
+        </view>
+        <image class="arrow" src="/images/icons/arrow-right-dark.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+</view>

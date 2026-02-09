@@ -1,0 +1,108 @@
+<!-- pages/conversation/conversation.wxml -->
+<view class="conversation-page">
+  <!-- 顶部导航 -->
+  <view class="nav-header">
+    <view class="back-btn" bindtap="onBack">
+      <text class="back-arrow">←</text>
+    </view>
+    
+    <view class="progress-section">
+      <text class="progress-label">TASK PROGRESS</text>
+      <text class="progress-value">{{completedCount}}/{{totalCount}}</text>
+    </view>
+
+    <view class="npc-mini-avatar">
+      <image src="{{npcAvatar}}" mode="aspectFill"></image>
+    </view>
+  </view>
+
+  <!-- 进度条 -->
+  <view class="progress-bar-container">
+    <view class="progress-bar">
+      <view 
+        class="progress-item {{index < completedCount ? 'completed' : ''}}" 
+        wx:for="{{objectives}}" 
+        wx:key="id"
+      ></view>
+    </view>
+    <text class="current-objective">Current: {{currentObjective}}</text>
+  </view>
+
+  <!-- 对话区域 -->
+  <scroll-view 
+    class="chat-area" 
+    scroll-y="true" 
+    scroll-into-view="{{scrollToId}}"
+    scroll-with-animation="true"
+  >
+    <view class="message-list">
+      <view 
+        class="message {{item.isUser ? 'user-message' : 'npc-message'}}"
+        wx:for="{{messages}}"
+        wx:key="id"
+        id="msg-{{item.id}}"
+      >
+        <view class="message-bubble">
+          <text>{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部工具栏 -->
+  <view class="bottom-toolbar">
+    <!-- 辅助按钮 -->
+    <view class="helper-buttons">
+      <view class="helper-btn hint-btn" bindtap="onHint">
+        <image src="/images/icons/hint.png" mode="aspectFit"></image>
+        <text>HINT</text>
+      </view>
+      <view class="helper-btn translate-btn" bindtap="onTranslate">
+        <image src="/images/icons/translate.png" mode="aspectFit"></image>
+        <text>TRANSLATE</text>
+      </view>
+    </view>
+
+    <!-- 录音按钮 -->
+    <view 
+      class="record-btn {{isRecording ? 'recording' : ''}}"
+      bindtouchstart="onRecordStart"
+      bindtouchend="onRecordEnd"
+      bindtouchcancel="onRecordEnd"
+    >
+      <image src="/images/icons/mic.png" mode="aspectFit"></image>
+      <text>{{isRecording ? 'RELEASE TO SEND' : 'HOLD TO TALK'}}</text>
+    </view>
+  </view>
+
+  <!-- 提示弹窗 -->
+  <view class="hint-modal" wx:if="{{showHint}}">
+    <view class="hint-overlay" bindtap="closeHint"></view>
+    <view class="hint-content">
+      <text class="hint-title">💡 Hint</text>
+      <text class="hint-text">{{hintText}}</text>
+      <view class="hint-close" bindtap="closeHint">Got it</view>
+    </view>
+  </view>
+
+  <!-- 翻译弹窗 -->
+  <view class="translate-modal" wx:if="{{showTranslate}}">
+    <view class="translate-overlay" bindtap="closeTranslate"></view>
+    <view class="translate-content">
+      <text class="translate-title">🌐 Translation</text>
+      <text class="translate-original">{{translateOriginal}}</text>
+      <text class="translate-result">{{translateResult}}</text>
+      <view class="translate-close" bindtap="closeTranslate">Got it</view>
+    </view>
+  </view>
+
+  <!-- 任务完成弹窗 -->
+  <view class="complete-modal" wx:if="{{showComplete}}">
+    <view class="complete-overlay"></view>
+    <view class="complete-content">
+      <text class="complete-title">🎉 Mission Complete!</text>
+      <text class="complete-xp">+{{xpEarned}} XP</text>
+      <view class="complete-btn" bindtap="onCompleteConfirm">Continue</view>
+    </view>
+  </view>
+</view>

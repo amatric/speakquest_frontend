@@ -1,0 +1,62 @@
+<!-- pages/backpack-detail/backpack-detail.wxml -->
+<view class="detail-page">
+  <!-- 顶部导航 -->
+  <view class="nav-header">
+    <view class="back-btn" bindtap="goBack">
+      <image src="/images/icons/arrow-left.png" mode="aspectFit"></image>
+    </view>
+    <text class="page-title">{{categoryName}}</text>
+    <view class="close-btn" bindtap="goBackToProfile">
+      <image src="/images/icons/close.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 卡片区域 -->
+  <view class="card-section">
+    <view class="phrase-card">
+      <!-- 分类标签 -->
+      <view class="category-tag">
+        <text>{{categoryName}}</text>
+      </view>
+
+      <!-- 类型标签 -->
+      <view class="type-tag">
+        <text>{{currentCard.type || 'PHRASE'}}</text>
+      </view>
+
+      <!-- 英文短语 -->
+      <text class="phrase-en">{{currentCard.phrase}}</text>
+
+      <!-- 分隔线 -->
+      <view class="phrase-divider"></view>
+
+      <!-- 中文翻译 -->
+      <text class="phrase-zh">{{currentCard.translation}}</text>
+
+      <!-- 播放按钮 -->
+      <view class="play-btn" bindtap="playAudio">
+        <image src="/images/icons/speaker.png" mode="aspectFit"></image>
+      </view>
+
+      <!-- 卡片计数 -->
+      <text class="card-count">CARD {{currentIndex + 1}} / {{cards.length}}</text>
+
+      <!-- 来源标签 -->
+      <view class="source-tag">
+        <text>{{currentCard.tag || '课堂提问'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部导航按钮 -->
+  <view class="nav-buttons">
+    <view class="nav-btn prev-btn {{currentIndex <= 0 ? 'disabled' : ''}}" bindtap="prevCard">
+      <image src="/images/icons/arrow-left.png" mode="aspectFit"></image>
+    </view>
+    <view class="nav-btn next-btn {{currentIndex >= cards.length - 1 ? 'disabled' : ''}}" bindtap="nextCard">
+      <image src="/images/icons/arrow-right-dark.png" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>

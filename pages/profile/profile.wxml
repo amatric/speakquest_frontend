@@ -1,0 +1,75 @@
+<!-- pages/profile/profile.wxml -->
+<view class="profile-page">
+  <!-- 顶部黄色区域 -->
+  <view class="header-section">
+    <!-- 头像 -->
+    <view class="avatar-container">
+      <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"></image>
+    </view>
+
+    <!-- 用户名 -->
+    <text class="username">{{userInfo.nickName || 'Alex Learner'}}</text>
+
+    <!-- ID -->
+    <view class="user-id">
+      <text>ID: {{userInfo.id || '8849201'}}</text>
+    </view>
+  </view>
+
+  <!-- 主要内容区域 -->
+  <view class="content-section">
+    <!-- 等级卡片 -->
+    <view class="level-card">
+      <view class="level-header">
+        <view class="level-icon">
+          <image src="/images/icons/star.png" mode="aspectFit"></image>
+        </view>
+        <text class="level-text">LEVEL {{userInfo.level || 12}}</text>
+        <text class="xp-text">{{userInfo.xp || 2450}} / {{userInfo.maxXp || 3000}} XP</text>
+      </view>
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{progressPercent}}%;"></view>
+      </view>
+    </view>
+
+    <!-- 知识背包按钮 -->
+    <view class="backpack-btn" bindtap="goToBackpack">
+      <image class="backpack-icon" src="/images/icons/book.png" mode="aspectFit"></image>
+      <text>KNOWLEDGE BACKPACK</text>
+      <image class="arrow-icon" src="/images/icons/arrow-right-dark.png" mode="aspectFit"></image>
+    </view>
+
+    <!-- 设置区域 -->
+    <view class="settings-section">
+      <text class="settings-title">SETTINGS</text>
+
+      <!-- 音乐设置 -->
+      <view class="setting-item">
+        <view class="setting-left">
+          <view class="setting-icon music-icon">
+            <image src="/images/icons/music.png" mode="aspectFit"></image>
+          </view>
+          <text>Music</text>
+        </view>
+        <switch checked="{{settings.music}}" bindchange="onMusicChange" color="#4CD964"/>
+      </view>
+
+      <!-- 音效设置 -->
+      <view class="setting-item">
+        <view class="setting-left">
+          <view class="setting-icon sound-icon">
+            <image src="/images/icons/sound.png" mode="aspectFit"></image>
+          </view>
+          <text>Sound Effects</text>
+        </view>
+        <switch checked="{{settings.soundEffects}}" bindchange="onSoundChange" color="#4CD964"/>
+      </view>
+    </view>
+
+    <!-- 退出登录 -->
+    <view class="logout-btn" bindtap="onLogout">
+      <image src="/images/icons/logout.png" mode="aspectFit"></image>
+      <text>Log Out</text>
+    </view>
+  </view>
+</view>

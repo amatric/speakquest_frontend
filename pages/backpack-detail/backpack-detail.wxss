@@ -1,0 +1,210 @@
+/* pages/backpack-detail/backpack-detail.wxss */
+
+.detail-page {
+  min-height: 100vh;
+  background: #FAF9F6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 顶部导航 */
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 30rpx 30rpx;
+  background: #FFFFFF;
+}
+
+.back-btn, .close-btn {
+  width: 60rpx;
+  height: 60rpx;
+  border: 3rpx solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn image, .close-btn image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.page-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  font-style: italic;
+  color: #000;
+  letter-spacing: 2rpx;
+}
+
+.divider {
+  height: 4rpx;
+  background: #000;
+}
+
+/* 卡片区域 */
+.card-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx;
+}
+
+.phrase-card {
+  width: 100%;
+  max-width: 600rpx;
+  background: #FFFFFF;
+  border-radius: 32rpx;
+  border: 4rpx solid #000;
+  box-shadow: 8rpx 8rpx 0 #000;
+  padding: 40rpx;
+  position: relative;
+  min-height: 500rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 分类标签 */
+.category-tag {
+  position: absolute;
+  top: -20rpx;
+  right: 30rpx;
+  background: #000;
+  padding: 12rpx 24rpx;
+  border-radius: 12rpx;
+}
+
+.category-tag text {
+  font-size: 22rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  letter-spacing: 1rpx;
+}
+
+/* 类型标签 */
+.type-tag {
+  background: #FFD700;
+  padding: 10rpx 30rpx;
+  border-radius: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.type-tag text {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 2rpx;
+}
+
+/* 英文短语 */
+.phrase-en {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 24rpx;
+}
+
+/* 分隔线 */
+.phrase-divider {
+  width: 100rpx;
+  height: 4rpx;
+  background: #E0E0E0;
+  margin-bottom: 24rpx;
+}
+
+/* 中文翻译 */
+.phrase-zh {
+  font-size: 30rpx;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+/* 播放按钮 */
+.play-btn {
+  width: 80rpx;
+  height: 80rpx;
+  border: 3rpx solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+
+.play-btn image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 卡片计数 */
+.card-count {
+  font-size: 24rpx;
+  color: #999;
+  letter-spacing: 2rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 来源标签 */
+.source-tag {
+  position: absolute;
+  bottom: -20rpx;
+  left: 30rpx;
+  background: #FFF9E6;
+  padding: 10rpx 20rpx;
+  border-radius: 8rpx;
+  border: 2rpx solid #000;
+}
+
+.source-tag text {
+  font-size: 22rpx;
+  color: #333;
+}
+
+/* 底部导航按钮 */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30rpx;
+  padding: 40rpx;
+  padding-bottom: calc(40rpx + env(safe-area-inset-bottom));
+}
+
+.nav-btn {
+  width: 100rpx;
+  height: 100rpx;
+  border: 4rpx solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+}
+
+.nav-btn.disabled {
+  opacity: 0.3;
+}
+
+.prev-btn {
+  background: #FFFFFF;
+}
+
+.next-btn {
+  background: #333;
+}
+
+.nav-btn image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.next-btn image {
+  filter: invert(1);
+}
