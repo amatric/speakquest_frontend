@@ -7,6 +7,16 @@
   overflow: hidden;
 }
 
+/* 背景图 - 居中显示，保持比例 */
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  z-index: 0;
+}
+
 /* 头部 */
 .header {
   padding: 60rpx 40rpx 20rpx;
@@ -48,9 +58,11 @@
   flex: 1;
   padding: 0 20rpx;
   height: calc(100vh - 200rpx);
+  position: relative;
+  z-index: 5;
 }
 
-/* 岛屿 */
+/* 岛屿 - 不再需要单独的背景图 */
 .island {
   position: relative;
   width: 100%;
@@ -60,12 +72,7 @@
 }
 
 .island-bg {
-  width: 650rpx;
-  height: 1100rpx;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  display: none;
 }
 
 /* 节点容器 */
@@ -143,50 +150,32 @@
 
 /* 节点位置 */
 .node-school {
-  top: 80rpx;
+  top: 280rpx;
   right: 100rpx;
 }
 
 .node-company {
-  top: 350rpx;
+  top: 550rpx;
   left: 60rpx;
 }
 
 .node-restaurant {
-  top: 650rpx;
+  top: 950rpx;
   left: 50%;
   transform: translateX(-30%);
 }
 
-/* 路径线 */
+/* 路径线 - 已删除，使用背景图自带的 */
 .path {
-  position: absolute;
-  border: 4rpx dashed #FFFFFF;
-  z-index: 1;
+  display: none;
 }
 
 .path-1 {
-  width: 200rpx;
-  height: 200rpx;
-  top: 200rpx;
-  left: 180rpx;
-  border: none;
-  border-right: 4rpx dashed #FFFFFF;
-  border-bottom: 4rpx dashed #FFFFFF;
-  border-radius: 0 0 40rpx 0;
-  transform: rotate(-20deg);
+  display: none;
 }
 
 .path-2 {
-  width: 150rpx;
-  height: 200rpx;
-  top: 500rpx;
-  left: 200rpx;
-  border: none;
-  border-left: 4rpx dashed #FFFFFF;
-  border-bottom: 4rpx dashed #FFFFFF;
-  border-radius: 0 0 0 40rpx;
-  transform: rotate(20deg);
+  display: none;
 }
 
 /* 棕榈树装饰 */
