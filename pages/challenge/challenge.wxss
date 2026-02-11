@@ -366,3 +366,7 @@
 .modal-start-btn .play-icon {
   margin-left: 12rpx;
 }
+
+.dots {
+  display: none;
+}

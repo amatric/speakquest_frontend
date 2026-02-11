@@ -2,8 +2,8 @@
 <view class="profile-page">
   <!-- 顶部黄色区域 -->
   <view class="header-section">
-    <!-- 头像 -->
-    <view class="avatar-container">
+    <!-- 头像 - 点击跳转到个人信息页 -->
+    <view class="avatar-container" bindtap="goToPersonalInfo">
       <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"></image>
     </view>
 

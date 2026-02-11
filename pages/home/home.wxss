@@ -95,9 +95,9 @@
 .node-card {
   width: 180rpx;
   height: 140rpx;
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20rpx;
-  border: 4rpx solid #000;
+  border: 4rpx dashed #4A90D9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,12 +108,13 @@
 }
 
 .node-card.active {
-  border: 6rpx dashed #4A90D9;
-  background: #FFFFFF;
+  border: 4rpx dashed #4A90D9;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .node.locked .node-card {
-  opacity: 0.7;
+  border: 4rpx dashed #4A90D9;
+  opacity: 0.9;
 }
 
 .node-icon {
@@ -150,17 +151,17 @@
 
 /* 节点位置 */
 .node-school {
-  top: 180rpx;
+  top: 80rpx;
   right: 100rpx;
 }
 
 .node-company {
-  top: 550rpx;
+  top: 350rpx;
   left: 60rpx;
 }
 
 .node-restaurant {
-  top: 950rpx;
+  top: 650rpx;
   left: 50%;
   transform: translateX(-30%);
 }

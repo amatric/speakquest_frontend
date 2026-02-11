@@ -4,9 +4,9 @@ import api from '../../utils/api'
 Page({
   data: {
     scenes: [
-      { id: 'school', name: 'SCHOOL', isUnlocked: false },
+      { id: 'school', name: 'SCHOOL', isUnlocked: true },
       { id: 'company', name: 'COMPANY', isUnlocked: true },
-      { id: 'restaurant', name: 'RESTAURANT', isUnlocked: false }
+      { id: 'restaurant', name: 'RESTAURANT', isUnlocked: true }
     ],
     showWelcome: false
   },
@@ -36,14 +36,15 @@ Page({
   },
 
   // 加载场景数据
-  async loadScenes() {
-    try {
-      const scenes = await api.getScenes()
-      this.setData({ scenes })
-    } catch (error) {
-      console.error('加载场景失败:', error)
-      // 使用默认数据
-    }
+  loadScenes() {
+    // 直接使用本地数据，全部解锁
+    this.setData({
+      scenes: [
+        { id: 'school', name: 'SCHOOL', isUnlocked: true },
+        { id: 'company', name: 'COMPANY', isUnlocked: true },
+        { id: 'restaurant', name: 'RESTAURANT', isUnlocked: true }
+      ]
+    })
   },
 
   // 点击节点
@@ -58,20 +59,12 @@ Page({
       return
     }
 
-    // 跳转到挑战列表，带上场景筛选参数
-    wx.switchTab({
-      url: '/pages/challenge/challenge',
-      success: () => {
-        // 通过事件通知 challenge 页面筛选
-        const pages = getCurrentPages()
-        const challengePage = pages.find(p => p.route === 'pages/challenge/challenge')
-        if (challengePage && challengePage.filterByScene) {
-          challengePage.filterByScene(scene.id)
-        }
-      }
-    })
-
-    // 备选方案：使用全局数据传递筛选条件
+    // 保存选中的场景ID到全局
     getApp().globalData.selectedSceneId = scene.id
+
+    // 跳转到挑战列表
+    wx.switchTab({
+      url: '/pages/challenge/challenge'
+    })
   }
 })

@@ -58,6 +58,13 @@ Page({
     })
   },
 
+  // 跳转个人信息页
+  goToPersonalInfo() {
+    wx.navigateTo({
+      url: '/pages/personal-info/personal-info'
+    })
+  },
+
   // 音乐开关
   async onMusicChange(e) {
     const music = e.detail.value

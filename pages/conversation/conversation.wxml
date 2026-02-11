@@ -96,13 +96,55 @@
     </view>
   </view>
 
-  <!-- 任务完成弹窗 -->
-  <view class="complete-modal" wx:if="{{showComplete}}">
-    <view class="complete-overlay"></view>
-    <view class="complete-content">
-      <text class="complete-title">🎉 Mission Complete!</text>
-      <text class="complete-xp">+{{xpEarned}} XP</text>
-      <view class="complete-btn" bindtap="onCompleteConfirm">Continue</view>
+  <!-- 任务完成结算界面 -->
+  <view class="result-page" wx:if="{{showComplete}}">
+    <!-- 返回按钮 -->
+    <view class="result-back" bindtap="onCompleteConfirm">
+      <text class="back-arrow">←</text>
+    </view>
+
+    <!-- 奖杯区域 -->
+    <view class="trophy-section">
+      <view class="trophy-circle">
+        <image src="/images/icons/trophy.png" mode="aspectFit" class="trophy-icon"></image>
+      </view>
+      <text class="result-rating">{{resultData.rating}}</text>
+      <view class="stars-row">
+        <text class="star" wx:for="{{resultData.stars}}" wx:key="index">⭐</text>
+      </view>
+      <view class="feedback-tag">
+        <text>{{resultData.feedback}}</text>
+      </view>
+    </view>
+
+    <!-- VOCAB BOOST -->
+    <view class="vocab-section">
+      <view class="section-header">
+        <view class="section-icon vocab-icon">📖</view>
+        <text class="section-title">VOCAB BOOST</text>
+      </view>
+      <view class="vocab-card">
+        <view class="vocab-item" wx:for="{{resultData.vocabBoost}}" wx:key="word">
+          <text class="vocab-word">{{item.word}}</text>
+          <text class="vocab-type">{{item.type}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- KEY PHRASE -->
+    <view class="phrase-section">
+      <view class="section-header">
+        <view class="section-icon phrase-icon">💬</view>
+        <text class="section-title">KEY PHRASE</text>
+      </view>
+      <view class="phrase-card">
+        <text class="phrase-text">{{resultData.keyPhrase}}</text>
+      </view>
+    </view>
+
+    <!-- CONTINUE 按钮 -->
+    <view class="continue-btn" bindtap="onCompleteConfirm">
+      <text>CONTINUE</text>
     </view>
   </view>
 </view>

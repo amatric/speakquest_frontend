@@ -181,3 +181,111 @@ switch .wx-switch-input.wx-switch-input-checked {
   background-color: #4CD964 !important;
   border-color: #4CD964 !important;
 }
+
+/* ========== 页面切换动画 ========== */
+
+/* 淡入动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 从下往上滑入 */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 从右往左滑入 */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 缩放淡入 */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 页面淡入效果 */
+.page-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 页面上滑效果 */
+.page-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* 页面右滑入效果 */
+.page-slide-in {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* 页面缩放效果 */
+.page-zoom-in {
+  animation: zoomIn 0.3s ease-out;
+}
+
+/* 卡片依次出现动画 */
+.card-animate {
+  animation: slideUp 0.4s ease-out backwards;
+}
+
+.card-animate:nth-child(1) { animation-delay: 0.05s; }
+.card-animate:nth-child(2) { animation-delay: 0.1s; }
+.card-animate:nth-child(3) { animation-delay: 0.15s; }
+.card-animate:nth-child(4) { animation-delay: 0.2s; }
+.card-animate:nth-child(5) { animation-delay: 0.25s; }
+
+/* 弹窗动画 */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100rpx) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-animate {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-content-animate {
+  animation: modalSlideUp 0.3s ease-out;
+}

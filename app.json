@@ -6,7 +6,8 @@
     "pages/profile/profile",
     "pages/conversation/conversation",
     "pages/backpack/backpack",
-    "pages/backpack-detail/backpack-detail"
+    "pages/backpack-detail/backpack-detail",
+    "pages/personal-info/personal-info"
   ],
   "window": {
     "navigationBarTitleText": "SpeakQuest",

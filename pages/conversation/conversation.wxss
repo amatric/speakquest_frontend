@@ -304,3 +304,196 @@
   color: #FFD700;
   margin-bottom: 30rpx;
 }
+
+/* ========== 结算页面样式 ========== */
+.result-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFFFFF;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  overflow-y: auto;
+}
+
+.result-back {
+  width: 80rpx;
+  height: 80rpx;
+  border: 4rpx solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.result-back .back-arrow {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+/* 奖杯区域 */
+.trophy-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+
+.trophy-circle {
+  width: 300rpx;
+  height: 300rpx;
+  background: #FAE052;
+  border: 8rpx solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+
+.trophy-icon {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.result-rating {
+  font-size: 56rpx;
+  font-weight: 900;
+  font-style: italic;
+  color: #000;
+  margin-bottom: 20rpx;
+}
+
+.stars-row {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 24rpx;
+}
+
+.star {
+  font-size: 48rpx;
+}
+
+.feedback-tag {
+  padding: 16rpx 40rpx;
+  border: 3rpx solid #000;
+  border-radius: 40rpx;
+}
+
+.feedback-tag text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* 通用区块样式 */
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.section-icon {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16rpx;
+  font-size: 28rpx;
+}
+
+.vocab-icon {
+  background: #4A90D9;
+}
+
+.phrase-icon {
+  background: #9B59B6;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 900;
+  font-style: italic;
+  color: #000;
+}
+
+/* VOCAB BOOST */
+.vocab-section {
+  margin-bottom: 40rpx;
+}
+
+.vocab-card {
+  background: #F8F8F8;
+  border: 3rpx solid #000;
+  border-radius: 20rpx;
+  padding: 20rpx 30rpx;
+}
+
+.vocab-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #E0E0E0;
+}
+
+.vocab-item:last-child {
+  border-bottom: none;
+}
+
+.vocab-word {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #000;
+}
+
+.vocab-type {
+  font-size: 24rpx;
+  color: #666;
+  padding: 8rpx 20rpx;
+  border: 2rpx solid #999;
+  border-radius: 20rpx;
+}
+
+/* KEY PHRASE */
+.phrase-section {
+  margin-bottom: 60rpx;
+}
+
+.phrase-card {
+  background: #F8F8F8;
+  border: 3rpx solid #000;
+  border-radius: 20rpx;
+  padding: 30rpx;
+}
+
+.phrase-text {
+  font-size: 30rpx;
+  font-style: italic;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* CONTINUE 按钮 */
+.continue-btn {
+  background: #000;
+  border-radius: 50rpx;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.continue-btn text {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  letter-spacing: 4rpx;
+}

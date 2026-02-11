@@ -133,7 +133,7 @@
 
 /* 知识背包按钮 */
 .backpack-btn {
-  background: #C8A0D9;
+  background: #B87EF8;
   border-radius: 24rpx;
   border: 4rpx solid #000;
   box-shadow: 6rpx 6rpx 0 #000;

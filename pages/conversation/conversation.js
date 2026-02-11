@@ -22,7 +22,18 @@ Page({
     translateOriginal: '',
     translateResult: '',
     showComplete: false,
-    xpEarned: 0
+    // 结算数据
+    resultData: {
+      rating: 'EXCELLENT!',
+      stars: 3,
+      feedback: 'Fluent expression & clear logic',
+      vocabBoost: [
+        { word: 'Oversight', type: 'NOUN' },
+        { word: 'Protocol', type: 'NOUN' }
+      ],
+      keyPhrase: '"We have identified the bug and are deploying a hotfix immediately."',
+      xpEarned: 150
+    }
   },
 
   onLoad(options) {
@@ -175,8 +186,38 @@ Page({
     if (newCompleted >= this.data.totalCount) setTimeout(() => this.handleMissionComplete(), 1000)
   },
 
-  handleMissionComplete() {
-    this.setData({ showComplete: true, xpEarned: 150 })
+  async handleMissionComplete() {
+    try {
+      // 从后端获取结算数据
+      const result = await api.endMission(this.data.missionId)
+      this.setData({
+        showComplete: true,
+        resultData: {
+          rating: result.rating || 'EXCELLENT!',
+          stars: result.stars || 3,
+          feedback: result.feedback || 'Fluent expression & clear logic',
+          vocabBoost: result.vocabBoost || [],
+          keyPhrase: result.keyPhrase || '',
+          xpEarned: result.xpEarned || 150
+        }
+      })
+    } catch (error) {
+      // 使用模拟数据
+      this.setData({
+        showComplete: true,
+        resultData: {
+          rating: 'EXCELLENT!',
+          stars: 3,
+          feedback: 'Fluent expression & clear logic',
+          vocabBoost: [
+            { word: 'Oversight', type: 'NOUN' },
+            { word: 'Protocol', type: 'NOUN' }
+          ],
+          keyPhrase: '"We have identified the bug and are deploying a hotfix immediately."',
+          xpEarned: 150
+        }
+      })
+    }
   },
 
   onCompleteConfirm() {
