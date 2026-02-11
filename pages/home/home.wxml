@@ -1,7 +1,7 @@
 <!-- pages/home/home.wxml -->
 <view class="home-page">
   <!-- 全屏背景图 -->
-  <image class="bg-image" src="/images/island-bg.png" mode="aspectFit"></image>
+  <image class="bg-image" src="/images/island-bg.png" mode="scaleToFill"></image>
 
   <!-- 标题 -->
   <view class="header">

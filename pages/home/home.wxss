@@ -13,7 +13,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 110%;
+  height: 100%;
   z-index: 0;
 }
 
@@ -150,7 +150,7 @@
 
 /* 节点位置 */
 .node-school {
-  top: 280rpx;
+  top: 180rpx;
   right: 100rpx;
 }
 
